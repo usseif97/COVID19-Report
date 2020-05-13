@@ -95,7 +95,7 @@ class _StatisticsScreen extends State<StatisticsScreen> {
                 ],
               ),
             ),
-            countryStatistics.length == 214
+            countryStatistics.length != 0
                 ? Container(
                     height: 300,
                     margin: EdgeInsets.all(5),
@@ -133,7 +133,8 @@ class _StatisticsScreen extends State<StatisticsScreen> {
                               onSort: (i, b) {
                                 setState(() {
                                   countryStatistics.sort((a, b) =>
-                                      int.parse(b.countryCases).compareTo(int.parse(a.countryCases)));
+                                      int.parse(b.countryCases).compareTo(
+                                          int.parse(a.countryCases)));
                                 });
                               }),
                           DataColumn(label: Text('Deaths')),
@@ -145,7 +146,15 @@ class _StatisticsScreen extends State<StatisticsScreen> {
                       ),
                     ),
                   )
-                : Container(child: Text("")),
+                : Container(
+                    padding: EdgeInsets.all(20),
+                    child: Text(
+                      "Loading..",
+                      style: TextStyle(
+                          color: Theme.of(context).primaryColorDark,
+                          fontWeight: FontWeight.bold,
+                          fontSize: 22),
+                    )),
           ],
         ),
       ),

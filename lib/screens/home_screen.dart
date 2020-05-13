@@ -10,7 +10,7 @@ class HomeScreen extends StatelessWidget {
         children: <Widget>[
           Container(
             width: MediaQuery.of(context).size.width,
-            height: MediaQuery.of(context).size.height * 0.5,
+            height: MediaQuery.of(context).size.height * 0.45,
             child: Stack(
               children: <Widget>[
                 Container(
@@ -270,7 +270,7 @@ class HomeScreen extends StatelessWidget {
                 ),
               ),
             ),
-            SizedBox(height: 35),
+            SizedBox(height: 60),
           ],
         ),
       ),
